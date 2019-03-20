@@ -1,0 +1,32 @@
+header {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color:#2e99a9;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #2e99a9;
+    margin: 0;
+}
+
+.content {
+    width: 600px;
+    border: 1px solid rgb(17, 17, 16);
+    margin: 10px auto;
+    padding: 30px;
+}
+
+.result {
+    text-align: center;
+    
+}
+
+
+

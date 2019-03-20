@@ -1,0 +1,67 @@
+header {
+    margin-top: 30px;
+    color: #2e99a9;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #2e99a9;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.title {
+    display: block;
+    font-size: 0;
+}
+
+.question {
+    display: block;
+    font-size: 0;
+}
+
+.choice {
+    display: block;
+    font-size: 0;
+}
+
+.select {
+    display: block;
+    font-size: 0;
+}
+
+.inline {
+    display: inline-block;
+    font-weight: 600;
+    width: 150px;
+    border: 1px solid rgb(124, 123, 123);
+    padding-top: 6px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+.inlineinput {
+    display: inline-block;
+    font-weight: 500;
+    width: 550px;
+    border: 1px solid rgb(124, 123, 123);
+    padding-top: 6px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+button {
+    margin: 10px;
+}
