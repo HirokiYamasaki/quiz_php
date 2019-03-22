@@ -62,7 +62,7 @@ if (!empty($_POST)) {
                     </tr>
                     <tr>
                         <th width="30%" height="40">パスワード</th>
-                        <td width="30%" height="40"><?php print(htmlspecialchars($_SESSION['join']['password'], ENT_QUOTES)); ?></td>
+                        <td width="30%" height="40">表示されません</td>
                     </tr>
                 </table>
 
