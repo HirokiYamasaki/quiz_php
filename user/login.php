@@ -45,42 +45,49 @@ if (!empty($_POST)) {
 </head>
 <body>
     <div class="container">
-        <div class="">
-            <div class="">
-                <header>
-                    <h1>ログインフォーム</h1>
-                </header>
-            </div>
-
-            <div class="content">
-                <div class="content-logo">
-                    <p>ユーザー名とパスワードを記入してログインしてください</p>
-                    <p>ユーザー登録がまだの方はこちらから登録してください -><a href="join.php">新規登録</a></p>
+        <header>
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>ヘッダー</h2>
                 </div>
-                <div class="koumoku">
-                    <?php if ($error['login'] === 'faild'): ?>
-                        <p class="error">ユーザー名かパスワードが間違っています。</p>
-                    <?php endif; ?>
-                    <?php if ($error['login'] === 'blank'): ?>
-                        <p class="error">ユーザー名とパスワードを入力してください</p>
-                    <?php endif; ?>
-
-                    <form  class="" action="" method="post">
-                        <div class="form-group form-inline">
-                            <label  for="username">ユーザー名</label>
-                            <input class="form-control" type="text" name="username" value="<?php print(htmlspecialchars($_POST['username'], ENT_QUOTES)); ?>">
-                        </div>
-                        <div class="form-group form-inline">
-                            <label for="password">パスワード</label>
-                            <input class="form-control" type="password" name="password" value="<?php print(htmlspecialchars($_POST['password'], ENT_QUOTES)); ?>">
-                        </div>
-                        
-                        <button class="btn btn-info" type="submit">ログイン</button>
-                        
-                    </form>
+                <div class="col-sm-2">
+                    <a href="../question">トップへ戻る</a>
                 </div>
             </div>
+        </header>
+    </div>    
+
+    <hr>
+
+    <div class="content">
+        <h2>ログインフォーム</h2>
+        <div class="content-logo">
+            <p>ユーザー名とパスワードを記入してログインしてください</p>
+            <p>ユーザー登録がまだの方はこちらから登録してください -><a href="join.php">新規登録</a></p>
+        </div>
+        <div class="koumoku">
+            <?php if ($error['login'] === 'faild'): ?>
+                <p class="error">ユーザー名かパスワードが間違っています。</p>
+            <?php endif; ?>
+            <?php if ($error['login'] === 'blank'): ?>
+                <p class="error">ユーザー名とパスワードを入力してください</p>
+            <?php endif; ?>
+
+            <form  class="" action="" method="post">
+                <div class="form-group form-inline">
+                    <label  for="username">ユーザー名</label>
+                    <input class="form-control" type="text" name="username" value="<?php print(htmlspecialchars($_POST['username'], ENT_QUOTES)); ?>">
+                </div>
+                <div class="form-group form-inline">
+                    <label for="password">パスワード</label>
+                    <input class="form-control" type="password" name="password" value="<?php print(htmlspecialchars($_POST['password'], ENT_QUOTES)); ?>">
+                </div>
+                
+                <button class="btn btn-info" type="submit">ログイン</button>
+                
+            </form>
         </div>
     </div>
+        
 </body>
 </html>
