@@ -37,7 +37,12 @@ $quiz = $quizs->fetch();
 <body>
     <div class="container">
         <header>
-            <h1>header</h1>
+            <div class="col-sm-10">
+                <h1>ヘッダー</h1>
+            </div>
+            <div class="col-sm-2">
+                <a href="index.php">トップへ戻る</a>
+            </div>
         </header>
     </div>
     <hr>
