@@ -62,6 +62,21 @@ if ($_REQUEST['action'] === 'rewrite') {
 </head>
 <body>
     <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-10">
+                    <h2>ヘッダー</h2>
+                </div>
+                <div class="col-sm-2">
+                    <a href="../question">トップへ戻る</a>
+                </div>
+            </div>
+        </header>
+    </div>    
+
+    <hr>
+
+    <div class="container">
         <div class="content">
             <h1>新規登録</h1>
             <p>会員登録するにはユーザー名とパスワード設定して下さい。</p>
