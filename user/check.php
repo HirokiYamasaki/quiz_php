@@ -45,32 +45,44 @@ if (!empty($_POST)) {
 <body>
     <div class="container">
         <header>
-            <h1>ユーザー登録確認</h1>
+            <div class="row">
+                <div class="col-sm-10">
+                    <h2>ヘッダー</h2>
+                </div>
+                <div class="col-sm-2">
+                    <a href="../question">トップへ戻る</a>
+                </div>
+            </div>
         </header>
-        <div class="content">
-            <p>下記の内容を確認して「登録ボタン」を押して下さい。</p>
-            <form action="" method="post">
-                <input type="hidden" name="action" value="submit">
-                <table border="1" width="100%">
-                    <tr>
-                        <th width="30%" height="40">ユーザー名</th>
-                        <td width="70%" height="40"><?php print(htmlspecialchars($_SESSION['join']['username'], ENT_QUOTES)); ?></td>
-                    </tr>
-                    <tr>
-                        <th width="30%" height="40">メールアドレス</th>
-                        <td width="30%" height="40"><?php print(htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES)); ?></td>
-                    </tr>
-                    <tr>
-                        <th width="30%" height="40">パスワード</th>
-                        <td width="30%" height="40">表示されません</td>
-                    </tr>
-                </table>
+    </div>    
 
-                <button type="button" class="btn btn-secondary" onclick="location.href='join.php?action=rewrite'">書き直す</button>
-                <button type="submit" class="btn btn-primary">登録する</button>
-            </form>
-        </div>
+    <hr>
+
+    <div class="content">
+        <h1>入力確認フォーム</h1>
+        <p>下記の内容を確認して「登録ボタン」を押して下さい。</p>
+        <form action="" method="post">
+            <input type="hidden" name="action" value="submit">
+            <table border="1" width="100%">
+                <tr>
+                    <th width="30%" height="40">ユーザー名</th>
+                    <td width="70%" height="40"><?php print(htmlspecialchars($_SESSION['join']['username'], ENT_QUOTES)); ?></td>
+                </tr>
+                <tr>
+                    <th width="30%" height="40">メールアドレス</th>
+                    <td width="30%" height="40"><?php print(htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES)); ?></td>
+                </tr>
+                <tr>
+                    <th width="30%" height="40">パスワード</th>
+                    <td width="30%" height="40">表示されません</td>
+                </tr>
+            </table>
+
+            <button type="button" class="btn btn-secondary" onclick="location.href='join.php?action=rewrite'">書き直す</button>
+            <button type="submit" class="btn btn-primary">登録する</button>
+        </form>
     </div>
+    
 </body>
 </html>
 
