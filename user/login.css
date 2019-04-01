@@ -1,6 +1,23 @@
-.container {
-    border: 1px solid #000;
-    padding-left: 50px;
-    padding-bottom: 10px;; 
-    width: 600px;
+header {
+    margin: 30px 0;
+    color:#2e99a9;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #2e99a9;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.content {
+    padding: 30px;
+    border: 1px solid rgb(17, 17, 16);
+    width: 700px;
+    margin: 0 auto;
 }
