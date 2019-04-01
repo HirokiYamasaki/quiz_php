@@ -14,13 +14,25 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="kanryou.css">
+    <link rel="stylesheet" href="completion.css">
 </head>
 <body>
     <div class="container">
-        <div class="col-sm-8 col-sm-offset-3 message">
-            <h1>ユーザー登録が完了しました！</h1>
-        </div>
+        <header>
+            <div class="col-sm-10">
+                <h1>ヘッダー</h1>
+            </div>
+            <div class="col-sm-2">
+                <a href="../question">トップへ戻る</a>
+            </div>
+        </header>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h2>ユーザー登録が完了しました！</h2>
+       
         <div class="row">
             <div class="col-sm-6 col-sm-offset-2 login">
                 <button class="btn btn-info" type="button" onclick="location.href='login.php'">早速ログインする</button>
