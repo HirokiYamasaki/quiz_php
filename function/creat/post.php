@@ -8,6 +8,9 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+
+
+
 //ユーザーテーブルへアクセスする
 $user = $db->prepare('SELECT * FROM user_db WHERE id=?');
 $user->execute(array($_SESSION['id']));
@@ -142,10 +145,10 @@ if ($_REQUEST['action'] === 'rewrite') {
                         <?php endif; ?>
                         <select name="select" class="form-control">
                             <option value="nan">選択してください</option>
-                            <option value="A1" <?php if ($_SESSION['post_quiz']['select'] === 'A1'){echo 'selected' ;} ?>>選択肢1</option>
-                            <option value="A2" <?php if ($_SESSION['post_quiz']['select'] === 'A2'){echo 'selected' ;} ?>>選択肢2</option>
-                            <option value="A3" <?php if ($_SESSION['post_quiz']['select'] === 'A3'){echo 'selected' ;} ?>>選択肢3</option>
-                            <option value="A4" <?php if ($_SESSION['post_quiz']['select'] === 'A4'){echo 'selected' ;} ?>>選択肢4</option>
+                            <option value="A1" <?php if ($_POST['select'] === 'A1'){echo 'selected' ;} ?>>選択肢1</option>
+                            <option value="A2" <?php if ($_POST['select'] === 'A2'){echo 'selected' ;} ?>>選択肢2</option>
+                            <option value="A3" <?php if ($_POST['select'] === 'A3'){echo 'selected' ;} ?>>選択肢3</option>
+                            <option value="A4" <?php if ($_POST['select'] === 'A4'){echo 'selected' ;} ?>>選択肢4</option>
                         </select>
                     </div>
 
