@@ -100,7 +100,7 @@ if (!empty($_POST)) {
                         </tr>
                         <tr>
                             <th>選択肢４</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice3'], ENT_QUOTES)); ?></td>
+                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice4'], ENT_QUOTES)); ?></td>
                         </tr>
                         <tr>
                             <th>正解の選択肢</th>
