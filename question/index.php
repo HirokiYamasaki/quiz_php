@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../question/dbconnect.php');
+require('dbconnect.php');
 
 
 //ユーザーテーブルへアクセスする
