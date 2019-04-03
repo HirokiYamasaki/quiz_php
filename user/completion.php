@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+mb_language("Japanese");
+mb_internal_encoding('UTF-8');
+$to = $_SESSION['join']['email'];
+$title = '登録ありがとうございます！！';
+$content = 'この度は、○○○○(サービス名)に登録してくださり誠にありがとうございます。
+            ○○○○(サービス名)では誰でも簡単にクイズを作成・投稿、回答できるサービスです。';
+
+mb_send_mail($to, $title, $content);    //登録完了メールを送信
+unset($_SESSION['join']);     //$_SESSION['join]を空にする
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +48,6 @@
 
     <div class="container">
         <h2>ユーザー登録が完了しました！</h2>
-       
         <div class="row">
             <div class="col-sm-6 col-sm-offset-2 login">
                 <button class="btn btn-info" type="button" onclick="location.href='login.php'">早速ログインする</button>
