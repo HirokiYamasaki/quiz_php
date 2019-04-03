@@ -16,7 +16,6 @@ if (!empty($_POST)) {
         $_SESSION['join']['email'],
         sha1($_SESSION['join']['password'])
     ));
-    unset($_SESSION['join']);     //$_SESSION['join]を空にする
 
     //DBに登録完了したらkanryou.phpへ飛ぶ
     header('Location: completion.php');
