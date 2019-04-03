@@ -89,8 +89,9 @@ if (!empty($_POST)) {
             </form>
         </div>
     </div>
-
-    <a class="reset" href="passreset.php">パスワードをお忘れですか？</a>
+    <div class="reset">
+        <a class="" href="passreset.php">パスワードをお忘れですか？</a>
+    </div>
         
 </body>
 </html>
