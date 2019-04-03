@@ -35,6 +35,7 @@ if (!empty($_POST)) {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="answer.css">
+<link rel="stylesheet" href="../css/header.css">
 
 <title>kaitou.php</title>
 </head>
@@ -85,20 +86,6 @@ if (!empty($_POST)) {
                         <input id="a4" type="radio" name="answer" value="<?php echo $answer[3]; ?>"><?php print($quiz[$answer[3]]); ?>
                     </label>
                 </div>
-                <!--
-                <label for="a1">
-                    <input id="a1" type="radio" name="answer" value="<?php echo $answer[0]; ?>"><?php print($quiz[$answer[0]]); ?>
-                </label>
-                <label for="a2">
-                    <input id="a2" type="radio" name="answer" value="<?php echo $answer[1]; ?>"><?php print($quiz[$answer[1]]); ?>
-                </label>
-
-
-                <input type="radio" name="answer" value="<?php echo $answer[0]; ?>"><?php print($quiz[$answer[0]]); ?><br>
-                <input type="radio" name="answer" value="<?php echo $answer[1]; ?>"><?php print($quiz[$answer[1]]); ?><br>
-                <input type="radio" name="answer" value="<?php echo $answer[2]; ?>"><?php print($quiz[$answer[2]]); ?><br>
-                <input type="radio" name="answer" value="<?php echo $answer[3]; ?>"><?php print($quiz[$answer[3]]); ?><br>
--->
                 <input type="submit" value="ファイナルアンサー？">
             </form>
         </div>

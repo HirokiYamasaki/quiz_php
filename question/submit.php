@@ -30,6 +30,7 @@ $quiz = $quizs->fetch();
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="submit.css">
+<link rel="stylesheet" href="../css/header.css">
 
 <title>submit.php</title>
 </head>
@@ -37,15 +38,19 @@ $quiz = $quizs->fetch();
 <body>
     <div class="container">
         <header>
-            <div class="col-sm-10">
-                <h1>ヘッダー</h1>
-            </div>
-            <div class="col-sm-2">
-                <a href="index.php">トップへ戻る</a>
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>ヘッダー</h1>
+                </div>
+                <div class="col-sm-2">
+                    <a href="index.php">トップへ戻る</a>
+                </div>
             </div>
         </header>
     </div>
+
     <hr>
+
     <div class="container">
         <div class="content">
             <div class="truefalse">

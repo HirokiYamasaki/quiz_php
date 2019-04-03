@@ -51,6 +51,7 @@ if (!empty($_POST)) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="postcheck.css">
+    <link rel="stylesheet" href="../../css/header.css">
 </head>
 <body>
     <div class="container">
@@ -69,60 +70,56 @@ if (!empty($_POST)) {
     <hr>
 
     <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <div class="logo">
-                <h1>クイズ投稿確認画面</h1>
-            </div>
-            <div class="content">
-                <p>下記の内容を確認して「登録ボタン」を押して下さい。</p>
-                <form action="" method="post">
-                    <input type="hidden" name="action" value="submit">
-                    <table border="1" width="100%" height="500">
-                        <tr>
-                            <th width="20%">タイトル</th>
-                            <td width="80%"><?php print(htmlspecialchars($_SESSION['post_quiz']['title'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>問題文</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['question'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>選択肢１</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice1'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>選択肢２</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice2'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>選択肢３</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice3'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>選択肢４</th>
-                            <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice4'], ENT_QUOTES)); ?></td>
-                        </tr>
-                        <tr>
-                            <th>正解の選択肢</th>
-                            <?php if ($_SESSION['post_quiz']['select'] === 'A1'): ?>
-                                <td><?php print('選択肢１'); ?></td>
-                            <?php endif; ?>
-                            <?php if ($_SESSION['post_quiz']['select'] === 'A2'): ?>
-                                <td><?php print('選択肢２'); ?></td>
-                            <?php endif; ?>
-                            <?php if ($_SESSION['post_quiz']['select'] === 'A3'): ?>
-                                <td><?php print('選択肢３'); ?></td>
-                            <?php endif; ?>
-                            <?php if ($_SESSION['post_quiz']['select'] === 'A4'): ?>
-                                <td><?php print('選択肢４'); ?></td>
-                            <?php endif; ?>
-                        </tr>
-                    </table>
-                    
-                    <button class="btn btn-warning" type="button" onclick="location.href='post.php?action=rewrite'">書き直す</button>
-                    <button class="btn btn-info" type="submit">クイズを投稿する</button>
-                </form>
-            </div>
+        <div class="content">
+            <h2>クイズ投稿確認</h2>
+            <p>下記の内容を確認して「登録ボタン」を押して下さい。</p>
+            <form action="" method="post">
+                <input type="hidden" name="action" value="submit">
+                <table border="1" width="100%" height="500">
+                    <tr>
+                        <th width="20%">タイトル</th>
+                        <td width="80%"><?php print(htmlspecialchars($_SESSION['post_quiz']['title'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>問題文</th>
+                        <td><?php print(htmlspecialchars($_SESSION['post_quiz']['question'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>選択肢１</th>
+                        <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice1'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>選択肢２</th>
+                        <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice2'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>選択肢３</th>
+                        <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice3'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>選択肢４</th>
+                        <td><?php print(htmlspecialchars($_SESSION['post_quiz']['choice4'], ENT_QUOTES)); ?></td>
+                    </tr>
+                    <tr>
+                        <th>正解の選択肢</th>
+                        <?php if ($_SESSION['post_quiz']['select'] === 'A1'): ?>
+                            <td><?php print('選択肢１'); ?></td>
+                        <?php endif; ?>
+                        <?php if ($_SESSION['post_quiz']['select'] === 'A2'): ?>
+                            <td><?php print('選択肢２'); ?></td>
+                        <?php endif; ?>
+                        <?php if ($_SESSION['post_quiz']['select'] === 'A3'): ?>
+                            <td><?php print('選択肢３'); ?></td>
+                        <?php endif; ?>
+                        <?php if ($_SESSION['post_quiz']['select'] === 'A4'): ?>
+                            <td><?php print('選択肢４'); ?></td>
+                        <?php endif; ?>
+                    </tr>
+                </table>
+                
+                <button class="btn btn-warning" type="button" onclick="location.href='post.php?action=rewrite'">書き直す</button>
+                <button class="btn btn-info" type="submit">クイズを投稿する</button>
+            </form>
         </div>
     </div>
 </body>

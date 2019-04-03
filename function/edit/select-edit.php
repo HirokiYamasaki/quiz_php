@@ -2,10 +2,6 @@
 session_start();
 require('../../question/dbconnect.php');
 
-//mondaiテーブルへアクセス
-//$mondais = $db->query('SELECT * FROM mondai ORDER BY id ASC');
-//$mondai = $mondais->fetch();
-
 $mondais = $db->prepare('SELECT * FROM mondai WHERE user_id=?');
 $mondais->execute(array($_SESSION['id']));
 
@@ -32,6 +28,7 @@ $_SESSION['session_number'] = $id;  //この$idは次のページでも利用す
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="select-edit.css">
+    <link rel="stylesheet" href="../../css/header.css">
 </head>
 <body>
     <div class="container">

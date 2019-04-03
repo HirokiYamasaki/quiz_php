@@ -37,6 +37,7 @@ if ($_SESSION['edit_quiz']['select'] === 'A1') {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="editcheck.css">
+    <link rel="stylesheet" href="../../css/header.css">
 </head>
 <body>
     <div class="container">
@@ -57,7 +58,7 @@ if ($_SESSION['edit_quiz']['select'] === 'A1') {
     <div class="container">
         <div class="content">
             <div class="logo"> 
-            <h3>このクイズの編集を決定しますか？</h3>
+            <h2>このクイズの編集を決定しますか？</h2>
             </div>
             <div class="">
                 <table border="1" width="100%" height="500">
