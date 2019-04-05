@@ -1,0 +1,11 @@
+.content {
+    width: 600px;
+    margin: 15px auto;
+    padding: 20px;
+    border: 1px solid #d1d1d1;
+
+}
+
+.error {
+    color: red;
+}
