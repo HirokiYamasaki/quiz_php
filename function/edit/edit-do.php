@@ -2,8 +2,6 @@
 session_start();
 require('../../question/dbconnect.php');
 
-
-//if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id']) && isset($_REQUEST['memo'])) {
 $statement = $db->prepare('UPDATE mondai SET title=?, question=?, A1=?, A2=?, A3=?, A4=?, trueanswer=? WHERE id=?');
 $statement->execute(array(
     $_SESSION['edit_quiz']['title'],
