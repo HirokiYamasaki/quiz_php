@@ -9,14 +9,23 @@ $user->execute(array($_SESSION['id']));
 $loginuser = $user->fetch();
 
 //mondaiテーブルへアクセス
-$mondais = $db->query('SELECT * FROM mondai ORDER BY id ASC');
+//$mondais = $db->query('SELECT * FROM mondai ORDER BY id ASC');
+$page = $_REQUEST['page'];
+if (isset($_REQUEST['page'])) {
+    $page = $_REQUEST['page'];
+} else {
+    $page = 1;
+}
 
+$start = 5 * ($page - 1);
 //userテーブルとmondaiテーブルでリレーションを張る
-$posts = $db->query('SELECT u.username, m.* 
+$posts = $db->prepare('SELECT u.username, m.* 
                      FROM user_db u, mondai m 
                      WHERE u.id=m.user_id
-                     ORDER BY m.created_at ASC');
-
+                     ORDER BY m.created_at ASC
+                     LIMIT ?, 5');
+$posts->bindParam(1, $start, PDO::PARAM_INT);
+$posts->execute();
 
 //$_SESSION['id']が空の場合(ログインしていない時)$setにblankを代入
 if (empty($_SESSION['id'])) {
@@ -113,8 +122,9 @@ if (empty($_SESSION['id'])) {
                     </tr>
                 <?php endif; ?>
             </table>
+
+            <a href="index.php?page=<?php print($page+1); ?>"><?php print($page+1); ?>ページ目へ</a>
         </div>
-        
         
     </div>
     
