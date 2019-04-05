@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+//直でcheck.phpが呼び出された場合はjoin.phpへ飛ばす
+if (!isset($_SESSION['join'])) {
+    header('Location: join.php');
+    exit();
+}
+
+//登録完了メールを送信
 mb_language("Japanese");
 mb_internal_encoding('UTF-8');
 $to = $_SESSION['join']['email'];
@@ -8,8 +15,8 @@ $title = '登録ありがとうございます！！';
 $content = 'この度は、○○○○(サービス名)に登録してくださり誠にありがとうございます。
             ○○○○(サービス名)では誰でも簡単にクイズを作成・投稿、回答できるサービスです。';
 
-mb_send_mail($to, $title, $content);    //登録完了メールを送信
-unset($_SESSION['join']);     //$_SESSION['join]を空にする
+mb_send_mail($to, $title, $content);    
+unset($_SESSION['join']);   
 ?>
 <!DOCTYPE html>
 <html>
