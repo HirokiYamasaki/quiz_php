@@ -1,12 +1,20 @@
 <?php
 session_start();
 
+//
+//直でこのページが呼び出された場合はjoin.phpへ飛ばす
+if (!isset($_SESSION['address'])) {
+    header('Location: join.php');
+    exit();
+}
+
+//パスワードリセットメールを送信
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 $to = $_SESSION['address'];
 $title = 'パスワード再設定';
 $content = '以下のリンクからパスワードを再設定して下さい'."\n";
-$content .= 'http://aonami.secret.jp/quiz/user/resetpass.php/';
+$content .= "http://aonami.secret.jp/quiz/user/resetpass.php?email=$to";
 
 mb_send_mail($to, $title, $content);
 ?>
