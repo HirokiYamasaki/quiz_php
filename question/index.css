@@ -33,3 +33,9 @@ footer {
     clear: both;
 }
 
+.nextpage {
+    float: right;
+    padding:0 50px;
+}
+
+
