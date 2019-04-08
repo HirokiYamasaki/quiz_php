@@ -2,6 +2,14 @@
 session_start();
 require('dbconnect.php');
 
+//ユーザーテーブルへアクセスする
+$user = $db->prepare('SELECT * FROM user_db WHERE id=?');
+$user->execute(array($_SESSION['id']));
+$loginuser = $user->fetch();
+
+//mondaiテーブルへアクセス
+//$mondais = $db->query('SELECT * FROM mondai ORDER BY id ASC');
+
 $counts = $db->query('SELECT COUNT(*) as cnt FROM mondai');
 $count = $counts->fetch();
 $max_page = ceil($count['cnt'] / 20);
@@ -15,11 +23,13 @@ if (isset($_REQUEST['page'])) {
 
 $start = 20 * ($page - 1);
 //userテーブルとmondaiテーブルでリレーションを張る
-$posts = $db->prepare('SELECT u.username, m.* 
-                     FROM user_db u, mondai m 
-                     WHERE u.id=m.user_id
-                     ORDER BY m.created_at ASC
-                     LIMIT ?, 20');
+$posts = $db->prepare(
+    'SELECT u.username, m.* 
+    FROM user_db u, mondai m 
+    WHERE u.id=m.user_id
+    ORDER BY m.created_at ASC
+    LIMIT ?, 20'
+);
 $posts->bindParam(1, $start, PDO::PARAM_INT);
 $posts->execute();
 
