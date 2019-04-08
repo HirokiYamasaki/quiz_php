@@ -2,14 +2,10 @@
 session_start();
 require('dbconnect.php');
 
+$counts = $db->query('SELECT COUNT(*) as cnt FROM mondai');
+$count = $counts->fetch();
+$max_page = ceil($count['cnt'] / 20);
 
-//ユーザーテーブルへアクセスする
-$user = $db->prepare('SELECT * FROM user_db WHERE id=?');
-$user->execute(array($_SESSION['id']));
-$loginuser = $user->fetch();
-
-//mondaiテーブルへアクセス
-//$mondais = $db->query('SELECT * FROM mondai ORDER BY id ASC');
 $page = $_REQUEST['page'];
 if (isset($_REQUEST['page'])) {
     $page = $_REQUEST['page'];
@@ -17,13 +13,13 @@ if (isset($_REQUEST['page'])) {
     $page = 1;
 }
 
-$start = 5 * ($page - 1);
+$start = 20 * ($page - 1);
 //userテーブルとmondaiテーブルでリレーションを張る
 $posts = $db->prepare('SELECT u.username, m.* 
                      FROM user_db u, mondai m 
                      WHERE u.id=m.user_id
                      ORDER BY m.created_at ASC
-                     LIMIT ?, 5');
+                     LIMIT ?, 20');
 $posts->bindParam(1, $start, PDO::PARAM_INT);
 $posts->execute();
 
@@ -97,15 +93,15 @@ if (empty($_SESSION['id'])) {
         </div>
         
         <div class="content">
-            <table border="1" width="81%" height="">
+            <table border="1" width="84%" height="">
                 <?php $quiz3 = []; ?>
                 <?php while ($post = $posts->fetch()): ?>
                     <?php $quiz3[] = $post; ?>
                     <?php if (count($quiz3) === 3): ?>
                         <tr>
-                            <td width="27%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[0]['id']; ?>"><?php print($quiz3[0]['title']) ?><span>(<?php print($quiz3[0]['username'])?>)</span></td>
-                            <td width="27%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[1]['id']; ?>"><?php print($quiz3[1]['title']) ?><span>(<?php print($quiz3[1]['username'])?>)</span></td>
-                            <td width="27%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[2]['id']; ?>"><?php print($quiz3[2]['title']) ?><span>(<?php print($quiz3[2]['username'])?>)</span></td>
+                            <td width="28%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[0]['id']; ?>"><?php print($quiz3[0]['title']) ?><span>(<?php print($quiz3[0]['username'])?>)</span></td>
+                            <td width="28%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[1]['id']; ?>"><?php print($quiz3[1]['title']) ?><span>(<?php print($quiz3[1]['username'])?>)</span></td>
+                            <td width="28%" height="50px"><a class="itimon" href="../question/answer.php?id=<?php echo $quiz3[2]['id']; ?>"><?php print($quiz3[2]['title']) ?><span>(<?php print($quiz3[2]['username'])?>)</span></td>
                         </tr>
                         <?php $quiz3 = []; ?>
                     <?php endif;?>
@@ -123,7 +119,12 @@ if (empty($_SESSION['id'])) {
                 <?php endif; ?>
             </table>
 
-            <a href="index.php?page=<?php print($page+1); ?>"><?php print($page+1); ?>ページ目へ</a>
+            <?php if ($page < $max_page): ?>
+                <a class="nextpage" href="index.php?page=<?php print($page+1); ?>"><?php print($page+1); ?>ページ目へ</a>
+            <?php endif; ?>
+            <?php if ($page >= 2): ?>
+                <a class="prevpage" href="index.php?page=<?php print($page-1); ?>"><?php print($page-1); ?>ページ目へ</a>
+            <?php endif; ?>
         </div>
         
     </div>
