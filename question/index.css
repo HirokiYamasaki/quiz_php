@@ -2,8 +2,13 @@
     text-align: right;
 }
 
-.menu {
+.main {
     height: 580px;
+}
+
+.menu {
+    /*height: 580px;*/
+    height: auto;
     width: 180px;
     border-right: 1px solid #d1d1d1;
     color: black;
@@ -39,3 +44,17 @@ footer {
 }
 
 
+@media only screen and (max-width: 1495px) {
+    
+    .menu {
+        float: none;
+        border-right: none;
+        height: auto;
+    }
+
+    table {
+        float: none;
+        margin: 10px auto;
+    }
+}
+  
