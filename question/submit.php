@@ -64,10 +64,10 @@ $quiz = $quizs->fetch();
             </div>
             <div class="link">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-xs-7">
                         <button class="btn btn-primary" type="button" onclick="location.href='index.php'">クイズ一覧へ戻る</button>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-xs-2">
                         <button class="btn btn-primary" type="button" onclick="location.href='answer.php?id=<?php print($_SESSION['session_number']); ?>'">同じクイズに挑戦</button>
                     </div>
                 </div>
