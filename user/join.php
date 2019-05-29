@@ -116,7 +116,7 @@ if ($_REQUEST['action'] === 'rewrite') {
                         <?php endif; ?>
                     </div>
                 </div>
-                <button class="btn bnt-info" type="submit">入力内容を確認する</button>
+                <button class="btn btn-primary" type="submit">入力内容を確認する</button>
             </form>
         </div>
     </div>
