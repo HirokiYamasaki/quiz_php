@@ -1,6 +1,12 @@
 .content {
-    width: 600px;
+    width: 500px;
     border: 1px solid #d1d1d1;
     margin: 15px auto;
     padding: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .content{
+        width: 90%;
+    }
 }
