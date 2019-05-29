@@ -4,9 +4,9 @@ require('../question/dbconnect.php');
 
 if (!empty($_POST)) {
     if ($_POST['username'] !== '' && $_POST['password'] !== '') {
-        $login = $db->prepare('SELECT * FROM user_db WHERE username=? AND password=?');
+        $login = $db->prepare('SELECT * FROM user_db WHERE email=? AND password=?');
         $login->execute(array(
-            $_POST['username'],
+            $_POST['email'],
             sha1($_POST['password'])
         ));
         $user = $login->fetch();
@@ -68,16 +68,16 @@ if (!empty($_POST)) {
         </div>
         <div class="koumoku">
             <?php if ($error['login'] === 'faild'): ?>
-                <p class="error">ユーザー名かパスワードが間違っています。</p>
+                <p class="error">メールアドレスかパスワードが間違っています。</p>
             <?php endif; ?>
             <?php if ($error['login'] === 'blank'): ?>
-                <p class="error">ユーザー名とパスワードを入力してください</p>
+                <p class="error">メールアドレスとパスワードを入力してください</p>
             <?php endif; ?>
 
             <form  class="" action="" method="post">
                 <div class="form-group form-inline">
-                    <label  for="username">ユーザー名</label>
-                    <input class="form-control" type="text" name="username" value="<?php print(htmlspecialchars($_POST['username'], ENT_QUOTES)); ?>">
+                    <label  for="username">メールアドレス</label>
+                    <input class="form-control" type="text" name="email" value="<?php print(htmlspecialchars($_POST['email'], ENT_QUOTES)); ?>">
                 </div>
                 <div class="form-group form-inline">
                     <label for="password">パスワード</label>
