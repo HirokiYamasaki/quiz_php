@@ -63,7 +63,7 @@ if (!empty($_POST)) {
         <p>下記の内容を確認して「登録ボタン」を押して下さい。</p>
         <form action="" method="post">
             <input type="hidden" name="action" value="submit">
-            <table border="1" width="100%">
+            <table border="1">
                 <tr>
                     <th width="30%" height="40">ユーザー名</th>
                     <td width="70%" height="40"><?php print(htmlspecialchars($_SESSION['join']['username'], ENT_QUOTES)); ?></td>
@@ -78,7 +78,7 @@ if (!empty($_POST)) {
                 </tr>
             </table>
 
-            <button type="button" class="btn btn-secondary" onclick="location.href='join.php?action=rewrite'">書き直す</button>
+            <button type="button" class="btn btn-success" onclick="location.href='join.php?action=rewrite'">書き直す</button>
             <button type="submit" class="btn btn-primary">登録する</button>
         </form>
     </div>

@@ -1,9 +1,15 @@
 .content {
-    width: 700px;
+    width: 300px;
     margin: 15px auto;
 }
 
-
 .btn {
     margin-top: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+
+    .content{
+        width: 90%;
+    }
 }
