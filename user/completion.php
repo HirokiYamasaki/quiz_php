@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+/*
 //直でcheck.phpが呼び出された場合はjoin.phpへ飛ばす
 if (!isset($_SESSION['join'])) {
     header('Location: join.php');
@@ -15,7 +16,8 @@ $title = '登録ありがとうございます！！';
 $content = 'この度は、○○○○(サービス名)に登録してくださり誠にありがとうございます。
             ○○○○(サービス名)では誰でも簡単にクイズを作成・投稿、回答できるサービスです。';
 
-mb_send_mail($to, $title, $content);    
+mb_send_mail($to, $title, $content);  
+*/  
 unset($_SESSION['join']);   
 ?>
 <!DOCTYPE html>
@@ -54,13 +56,15 @@ unset($_SESSION['join']);
     <hr>
 
     <div class="container">
-        <h2>ユーザー登録が完了しました！</h2>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-2 login">
-                <button class="btn btn-info" type="button" onclick="location.href='login.php'">早速ログインする</button>
-            </div>
-            <div class="col-sm-4 notlogin">
-                <button class="btn btn-info" type="button" onclick="location.href='../question/index.php'">ログインせずに利用する</button>
+        <div class="content">
+            <h2>ユーザー登録が完了しました！</h2>
+            <div class="row">
+                <div class="col-xs-7 login">
+                    <button class="btn btn-info" type="button" onclick="location.href='login.php'">早速ログインする</button>
+                </div>
+                <div class="col-xs-2 notlogin">
+                    <button class="btn btn-info" type="button" onclick="location.href='../question/index.php'">ログインせずに利用</button>
+                </div>
             </div>
         </div>
     </div>
