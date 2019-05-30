@@ -24,4 +24,9 @@ http://aonami.secret.jp/quiz/question/
 ### 使用技術
 - HTML/CSS(bootstrap)
 - PHP
-- ロリポップのサーバーをレンタル
+
+#### ローカル環境
+- XAMMP(Apache MySQL)
+
+#### 本番環境
+- ロリポップ
